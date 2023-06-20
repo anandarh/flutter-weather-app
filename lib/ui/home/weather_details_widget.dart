@@ -8,7 +8,7 @@ final dayFormat = DateFormat('EEEE');
 class WeatherDetailsWidget extends StatelessWidget {
   final City city;
 
-  const WeatherDetailsWidget({Key key, this.city}) : super(key: key);
+  const WeatherDetailsWidget({super.key, required this.city});
 
   @override
   Widget build(BuildContext context) {

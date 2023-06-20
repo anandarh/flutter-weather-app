@@ -8,7 +8,7 @@ class LoaderWidget extends StatefulWidget {
 
 class _LoaderWidgetState extends State<LoaderWidget>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

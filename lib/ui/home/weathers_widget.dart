@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weatherflut/model/city.dart';
@@ -11,11 +10,7 @@ class WeathersWidget extends StatefulWidget {
   final List<City> cities;
   final VoidCallback onTap;
 
-  const WeathersWidget({
-    Key key,
-    this.cities,
-    this.onTap,
-  }) : super(key: key);
+  const WeathersWidget({super.key, required this.cities, required this.onTap});
 
   @override
   _WeathersWidgetState createState() => _WeathersWidgetState();
@@ -113,11 +108,7 @@ class WeatherItem extends StatelessWidget {
   final City city;
   final VoidCallback onTap;
 
-  const WeatherItem({
-    Key key,
-    this.city,
-    this.onTap,
-  }) : super(key: key);
+  const WeatherItem({super.key, required this.city, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -282,7 +273,7 @@ class _WeatherItemDetails extends StatelessWidget {
   final String title;
   final String value;
 
-  const _WeatherItemDetails({Key key, this.title, this.value}) : super(key: key);
+  const _WeatherItemDetails({required this.title, required this.value});
 
   @override
   Widget build(BuildContext context) {

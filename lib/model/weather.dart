@@ -10,21 +10,21 @@ String weatherToJson(Weather data) => json.encode(
 
 class Weather {
   Weather({
-    this.id,
-    this.weatherStateName,
-    this.weatherStateAbbr,
-    this.windDirectionCompass,
-    this.created,
-    this.applicableDate,
-    this.minTemp,
-    this.maxTemp,
-    this.theTemp,
-    this.windSpeed,
-    this.windDirection,
-    this.airPressure,
-    this.humidity,
-    this.visibility,
-    this.predictability,
+    required this.id,
+    required this.weatherStateName,
+    required this.weatherStateAbbr,
+    required this.windDirectionCompass,
+    required this.created,
+    required this.applicableDate,
+    required this.minTemp,
+    required this.maxTemp,
+    required this.theTemp,
+    required this.windSpeed,
+    required this.windDirection,
+    required this.airPressure,
+    required this.humidity,
+    required this.visibility,
+    required this.predictability,
   });
 
   int id;

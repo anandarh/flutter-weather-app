@@ -6,9 +6,9 @@ class City {
   final List<Weather> weathers;
 
   City({
-    this.title,
-    this.id,
-    this.weathers,
+    required this.title,
+    required this.id,
+    required this.weathers,
   });
 
   Map<String, dynamic> toJson() => {
@@ -22,9 +22,9 @@ class City {
     return City(
       id: map['woeid'],
       title: map['title'],
-      weathers: myWeathers != null
-          ? (myWeathers as List).map((e) => Weather.fromJson(e)).toList()
-          : null,
+      weathers: myWeathers(myWeathers as List)
+          .map((e) => Weather.fromJson(e))
+          .toList(),
     );
   }
 

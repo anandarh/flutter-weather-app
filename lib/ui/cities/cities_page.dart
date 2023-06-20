@@ -13,7 +13,7 @@ class CitiesPage extends StatefulWidget {
 }
 
 class _CitiesPageState extends State<CitiesPage> {
-  CitiesBloc bloc;
+  late CitiesBloc bloc;
 
   void handleDeleteTap(City city) async {
     final result = await showDialog(
@@ -24,11 +24,11 @@ class _CitiesPageState extends State<CitiesPage> {
           title: Text('Confirmación'),
           content: Text('Seguro que desea eliminar la ciudad ${city.title}?'),
           actions: <Widget>[
-            OutlineButton(
+            OutlinedButton(
               child: Text('NO'),
               onPressed: () => Navigator.of(context).pop(false),
             ),
-            OutlineButton(
+            OutlinedButton(
               child: Text('SI'),
               onPressed: () => Navigator.of(context).pop(true),
             )
@@ -134,10 +134,9 @@ class CityItem extends StatelessWidget {
   final VoidCallback onTap;
 
   const CityItem({
-    Key key,
-    this.city,
-    this.onTap,
-  }) : super(key: key);
+    required this.city,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {

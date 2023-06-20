@@ -10,11 +10,11 @@ class AddCityBloc extends ChangeNotifier {
   final ApiRepository apiService;
   List<City> cities = [];
   bool loading = false;
-  String errorMessage;
+  String? errorMessage;
 
   AddCityBloc({
-    @required this.storage,
-    @required this.apiService,
+    required this.storage,
+    required this.apiService,
   });
 
   void onChangedText(String text) {

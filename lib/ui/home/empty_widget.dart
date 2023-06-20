@@ -4,7 +4,7 @@ import 'package:weatherflut/ui/ui_constants.dart';
 class EmptyWidget extends StatelessWidget {
   final VoidCallback onTap;
 
-  const EmptyWidget({Key key, this.onTap}) : super(key: key);
+  const EmptyWidget({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -54,14 +54,7 @@ class EmptyWidget extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                  RaisedButton(
-                    color: Colors.white,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        15.0,
-                      ),
-                    ),
+                  ElevatedButton(
                     child: Text('Agregar ciudad'),
                     onPressed: onTap,
                   ),

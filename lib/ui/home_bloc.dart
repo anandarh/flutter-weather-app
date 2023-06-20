@@ -12,14 +12,15 @@ class HomeBloc extends ChangeNotifier {
 
   final formatDate = DateFormat('dd/MM/yyyy HH');
 
-  HomeBloc({this.storage, this.apiService});
+  HomeBloc({required this.storage, required this.apiService});
 
   void loadCities() async {
     final lastUpdate = await storage.getLastUpdate();
     final now = DateTime.now();
     final localCities = await storage.getCities();
     if (localCities.isEmpty) return;
-    if (lastUpdate == null || (formatDate.format(now) != formatDate.format(lastUpdate))) {
+    if (lastUpdate == null ||
+        (formatDate.format(now) != formatDate.format(lastUpdate))) {
       List<City> citiesUpdated = [];
       loading = true;
       notifyListeners();

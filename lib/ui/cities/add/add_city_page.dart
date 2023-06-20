@@ -14,7 +14,7 @@ class AddCityPage extends StatefulWidget {
 }
 
 class _AddCityPageState extends State<AddCityPage> {
-  AddCityBloc bloc;
+  late AddCityBloc bloc;
 
   void handleAddTap(City city) async {
     final result = await bloc.addCity(city);
@@ -75,7 +75,7 @@ class _AddCityPageState extends State<AddCityPage> {
                 ),
                 if (bloc.errorMessage != null)
                   Text(
-                    bloc.errorMessage,
+                    bloc.errorMessage!,
                     style: TextStyle(color: Colors.red),
                   ),
                 const SizedBox(

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Debouncer {
-  Timer _timer;
+  Timer? _timer;
 
   void run(VoidCallback callback) {
     _timer?.cancel();

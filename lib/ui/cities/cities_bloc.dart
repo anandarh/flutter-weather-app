@@ -6,7 +6,7 @@ class CitiesBloc extends ChangeNotifier {
   List<City> cities = [];
   final StoreRepository storage;
 
-  CitiesBloc({@required this.storage});
+  CitiesBloc({required this.storage});
 
   void loadCities() async {
     cities = await storage.getCities();

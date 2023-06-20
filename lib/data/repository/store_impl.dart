@@ -51,7 +51,7 @@ class StoreImpl extends StoreRepository {
   }
 
   @override
-  Future<DateTime> getLastUpdate() async {
+  Future<DateTime?> getLastUpdate() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     final data = prefs.getInt(keyLastUpdate);
     if (data != null && data > 0) {
